@@ -11,5 +11,8 @@
         ".vscodeignore": true
 	},
 	"files.trimTrailingWhitespace": true,
-	"typescript.tsdk": "./node_modules/typescript/lib" // we want to use the TS server from our node_modules folder to control its version
+	"editor.insertSpaces": true,
+	"editor.tabSize": 4,
+	// we want to use the TS server from our node_modules folder to control its version
+	"typescript.tsdk": "./node_modules/typescript/lib"
 }

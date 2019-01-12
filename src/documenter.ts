@@ -398,9 +398,10 @@ export class Documenter implements vs.Disposable {
             const isArgs = !!parameter.dotDotDotToken;
             const initializerValue = parameter.initializer ? parameter.initializer.getText() : null;
 
-            let typeName = "{*}";
+            let typeName: string;
 
             if (includeTypes()) {
+                typeName = "{*}";
                 if (parameter.initializer && !parameter.type) {
                     if (/^[0-9]/.test(initializerValue)) {
                         typeName = "{number}";

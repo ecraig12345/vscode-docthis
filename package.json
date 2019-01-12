@@ -95,6 +95,11 @@
           "type": "boolean",
           "default": false,
           "description": "When enabled, will add the @date tag in YYYY-MM-DD format."
+        },
+        "docthis.enableCommentSnippet": {
+          "type": "boolean",
+          "default": true,
+          "description": "Use extension to generate comment whenever /** is typed."
         }
       }
     }
@@ -109,7 +114,7 @@
     "@types/mocha": "^5.2.0",
     "@types/node": "^10.3.0",
     "tslint": "^5.10.0",
-    "vscode": "^1.1.18"
+    "vscode": "^1.1.26"
   },
   "dependencies": {
     "typescript": "^2.9.1"

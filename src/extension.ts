@@ -14,6 +14,10 @@ const languages = [
 
 let documenter: Documenter;
 
+function enableSnippet() {
+    return vs.workspace.getConfiguration().get("docthis.enableCommentSnippet", true);
+}
+
 function lazyInitializeDocumenter() {
     if (!documenter) {
         documenter = new Documenter();
@@ -82,11 +86,9 @@ export function activate(context: vs.ExtensionContext): void {
                 const line = document.lineAt(position.line).text;
                 const prefix = line.slice(0, position.character);
 
-                if (prefix.match(/^\s*$|\/\*\*\s*$|^\s*\/\*\*+\s*$/)) {
+                if (prefix.match(/^\s*$|\/\*\*\s*$|^\s*\/\*\*+\s*$/) && enableSnippet()) {
                     return [new DocThisCompletionItem(document, position)];
                 }
-
-                return;
             }
         },
         "/", "*"));
